@@ -11,6 +11,11 @@ mRNA_sequence = DNA.seq.transcribe()
 # Get the amino acids from the RNA sequence
 amino_acids = mRNA_sequence.translate()
 
-print(f"Amino Acids: {amino_acids[:66]}")
+proteins = [p for p in amino_acids.split("*")]
+print(f"Proteins: {proteins}")
+print(f"Protein length: {len(proteins)}")
+
+for i in range(10):
+    print(f"Protein: {proteins[i]}, Length: {len(proteins[i])}")
 
 
