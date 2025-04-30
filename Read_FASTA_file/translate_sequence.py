@@ -1,5 +1,4 @@
 from Bio import SeqIO
-from Bio.Seq import transcribe
 
 # DNA read
 DNA = SeqIO.read("gene2.fna", "fasta")
