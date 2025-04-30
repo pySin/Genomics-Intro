@@ -19,6 +19,8 @@ def read_fasta(file_path):
 
 
 # Usage
-fasta_data = read_fasta("example.fasta")
+fasta_data = read_fasta("gene.fna")
+# print(f"Fasta Data: {fasta_data}")
 for seq_id, sequence in fasta_data.items():
     print(f"ID: {seq_id}\nSequence: {sequence[:50]}...")  # Print first 50 chars
+    print(f"DNA sequence length: {len(sequence)}")
