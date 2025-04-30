@@ -1,7 +1,6 @@
 from Bio import SeqIO
 from collections import Counter
 
-
 # Sequence read
 DNA = SeqIO.read("gene2.fna", "fasta")
 
@@ -12,10 +11,11 @@ mRNA_sequence = DNA.seq.transcribe()
 amino_acids = mRNA_sequence.translate()
 
 proteins = [p for p in amino_acids.split("*")]
-print(f"Proteins: {proteins}")
+# print(f"Proteins: {proteins}")
 print(f"Protein length: {len(proteins)}")
 
-for i in range(10):
-    print(f"Protein: {proteins[i]}, Length: {len(proteins[i])}")
+# for i in range(10):
+#     print(f"Protein: {proteins[i]}, Length: {len(proteins[i])}")
 
-
+ordered_proteins = sorted(proteins, key=lambda x: len(x), reverse=True)
+[print(f"Protein: {p}, Length: {len(p)}") for p in ordered_proteins[:20]]
