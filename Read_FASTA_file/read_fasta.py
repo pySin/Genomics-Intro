@@ -18,3 +18,7 @@ def read_fasta(file_path):
     return sequences
 
 
+# Usage
+fasta_data = read_fasta("example.fasta")
+for seq_id, sequence in fasta_data.items():
+    print(f"ID: {seq_id}\nSequence: {sequence[:50]}...")  # Print first 50 chars
