@@ -1,5 +1,6 @@
 from Bio import SeqIO
 from Bio.Blast import NCBIWWW
+from Bio import SearchIO
 
 # Sequence read
 DNA = SeqIO.read("gene2.fna", "fasta")
@@ -28,8 +29,8 @@ with open("largest_protein.fasta", "w") as file:
     file.write(f">protein\n{longest_protein}")
 
 result = NCBIWWW.qblast("blastp", "pdb", longest_protein)
-
+blast_result = SearchIO.read(result, "blast-xml")
 
 print(f"NCBI result: {result}")
-for r in result:
+for r in blast_result:
     print(f"Data line: {r}")
